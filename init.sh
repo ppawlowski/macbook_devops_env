@@ -6,7 +6,7 @@ if softwareupdate --history | grep --silent "Command Line Tools"; then
 else
     in_progress_file=/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
     touch ${in_progress_file}
-    for software in `softwareupdate --list | grep 'Command Line Tools' | grep Label` ; do
+    for software in `softwareupdate --list | grep 'Command Line Tools' | grep Label | sed 's/^\*\ Label\:\ //g'` ; do
         softwareupdate --verbose --install "${software}" || echo "Installation of ${software} failed." 1>&2 && rm ${in_progress_file} && exit 1;
     done
     rm ${in_progress_file}
