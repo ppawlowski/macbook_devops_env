@@ -5,4 +5,5 @@
 
 # Install Ansible
 brew update
-brew install ansible
+brew install ansible git
+git clone git@github.com:ppawlowski/macbook_devops_env.git && cd mackbook_devops_env
