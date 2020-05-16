@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 
 # Install XCode
-if softwareupdate --history | grep --silent "Command Line Tools"; then
+if [[ -d /Library/Developer/CommandLineTools ]]; then
     echo 'Command-line tools already installed.'
 else
     in_progress_file=/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
     touch ${in_progress_file}
-    for software in `softwareupdate --list | grep 'Command Line Tools' | grep Label | sed 's/^\*\ Label\:\ //g'` ; do
-        softwareupdate --verbose --install "${software}" || echo "Installation of ${software} failed." 1>&2 && rm ${in_progress_file} && exit 1;
-    done
+    cmd_line_tools=`softwareupdate --list | grep 'Command Line Tools' | grep Label | sed 's/^\*\ Label\:\ //g' | tail -n1`
+    softwareupdate --verbose --install "${cmd_line_tools}" || echo "Installation of ${cmd_line_tools} failed." 1>&2 && rm ${in_progress_file} && exit 1;
     rm ${in_progress_file}
 fi
 
@@ -17,5 +16,5 @@ fi
 
 # Install Ansible
 brew update
-brew install ansible git
+brew install ansible
 git clone git@github.com:ppawlowski/macbook_devops_env.git && cd mackbook_devops_env
