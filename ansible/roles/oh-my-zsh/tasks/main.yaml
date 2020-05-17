@@ -1,0 +1,16 @@
+- name: 'Clone oh-my-zsh repository'
+  git:
+    repo: '{{omz_repo_url}}'
+    dest: ~/.oh-my-zsh
+
+- name: 'Set ownership for ~/.oh-my-zsh directory'
+  file:
+    path: ~/.oh-my-zsh
+    owner: {{ansible_user_id}}
+    mode: 0644
+
+- name: 'Create ~/.zshrc file'
+  template:
+    src: zhsrc.j2
+    dest: ~/.zshrc
+

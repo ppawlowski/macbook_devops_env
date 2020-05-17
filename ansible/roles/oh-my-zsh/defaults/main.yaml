@@ -1,0 +1,17 @@
+omz_repo_url: https://github.com/robbyrussell/oh-my-zsh.git
+omz_theme: robbyrussell
+omz_plugins:
+  - git
+  - ansible
+  - aws
+  - common-aliases
+  - command-not-found
+  - docker
+  - docker-compose
+  - docker-machine
+  - doctl
+  - helm
+  - kubectl
+  - nmap
+  - terraform
+  - z
