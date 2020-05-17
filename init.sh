@@ -11,10 +11,13 @@ else
     rm ${in_progress_file}
 fi
 
+defaults write com.apple.dock titlesize -int 48; killall Dock
+
 # Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Install Ansible
 brew update
 brew install ansible
-git clone git@github.com:ppawlowski/macbook_devops_env.git && cd mackbook_devops_env
+git clone https://github.com/ppawlowski/macbook_devops_env.git && cd mackbook_devops_env
+ansible-playbook ansible/setup.yaml
