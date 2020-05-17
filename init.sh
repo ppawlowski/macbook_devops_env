@@ -19,5 +19,5 @@ defaults write com.apple.dock titlesize -int 48; killall Dock
 # Install Ansible
 brew update
 brew install ansible
-git clone https://github.com/ppawlowski/macbook_devops_env.git && cd mackbook_devops_env
+git clone https://github.com/ppawlowski/macbook_devops_env.git && cd macbook_devops_env
 ansible-playbook ansible/setup.yaml
