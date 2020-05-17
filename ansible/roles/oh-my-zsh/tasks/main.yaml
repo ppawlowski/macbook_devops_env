@@ -11,6 +11,6 @@
 
 - name: 'Create ~/.zshrc file'
   template:
-    src: zhsrc.j2
+    src: zshrc.j2
     dest: ~/.zshrc
 
