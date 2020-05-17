@@ -6,7 +6,7 @@
 - name: 'Set ownership for ~/.oh-my-zsh directory'
   file:
     path: ~/.oh-my-zsh
-    owner: {{ansible_user_id}}
+    owner: '{{ansible_user_id}}'
     mode: 0644
 
 - name: 'Create ~/.zshrc file'
