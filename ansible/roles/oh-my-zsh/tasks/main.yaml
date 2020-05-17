@@ -2,6 +2,8 @@
   git:
     repo: '{{omz_repo_url}}'
     dest: ~/.oh-my-zsh
+    update: yes
+    force: yes
 
 - name: 'Set ownership for ~/.oh-my-zsh directory'
   file:
@@ -13,4 +15,5 @@
   template:
     src: zshrc.j2
     dest: ~/.zshrc
+    owner: '{{ansible_user_ida}}'
 
