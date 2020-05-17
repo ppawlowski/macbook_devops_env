@@ -20,7 +20,7 @@ fi
 brew update
 brew install ansible
 if [[ -d macbook_devops_env ]]; then
-    git pull macbook_devops_env
+    cd macbook_devops_env && git pull
 else
     git clone https://github.com/ppawlowski/macbook_devops_env.git && cd macbook_devops_env
 fi
