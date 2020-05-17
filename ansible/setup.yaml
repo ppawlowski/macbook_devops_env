@@ -1,6 +1,7 @@
 ---
   - name: Configure your Macbook with DevOps tools
-    hosts: local
+    hosts: localhost
+    connection: local
     become: no
     roles:
       - oh-my-zsh
