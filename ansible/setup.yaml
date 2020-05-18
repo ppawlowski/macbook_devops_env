@@ -3,6 +3,9 @@
     hosts: localhost
     connection: local
     become: no
+    vars:
+      - install_sublime: true
+      - install_brackets: true
     roles:
       - iterm2
       - oh-my-zsh
