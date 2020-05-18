@@ -1,5 +1,4 @@
 - name: Install common shell tools
   homebrew:
-    name: '{{item}}'
+    name: '{{shell_tools_list}}'
     state: present
-  with_items: '{{shell_tools_list}}'
