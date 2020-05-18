@@ -3,3 +3,24 @@
     name: awscli
     state: present
   when: install_aws_cli
+
+- name: Create AWS CLI configuration directory
+  file:
+    path: ~/.aws
+    owner: '{{ansible_user_id}}'
+    mode: 0700
+    state: directory
+
+- name: Create AWS CLI configuration file
+  template:
+    dest: ~/.aws/config
+    src: config.j2
+    owner: '{{ansible_user_id}}'
+    mode: 0600
+
+- name: Create AWS CLI credentials file
+  template:
+    dest: ~/.aws/credentials
+    src: credentials.j2
+    owner: '{{ansible_user_id}}'
+    mode: 0600
