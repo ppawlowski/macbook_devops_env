@@ -1,0 +1,4 @@
+- name: Install Zoom video conferencing tool
+  homebrew_cask:
+    name: zoomus
+    state: present
