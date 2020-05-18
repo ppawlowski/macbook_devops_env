@@ -1,0 +1,4 @@
+shell_tools_list:
+  - wget
+  - 7z
+  - mtr
