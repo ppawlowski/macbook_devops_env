@@ -13,4 +13,5 @@
       - browsers
       - pycharm-ce
       - text_editors
+      - aws_cli
       - communication_tools

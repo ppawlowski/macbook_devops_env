@@ -1,0 +1,5 @@
+- name: Install AWS CLI
+  homebrew:
+    name: awscli
+    state: present
+  when: install_aws_cli
