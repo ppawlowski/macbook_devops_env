@@ -1,0 +1,4 @@
+- name: Install Pycharm-CE
+  homebrew_cask:
+    name: pycharm-ce
+    state: present
