@@ -1,0 +1,4 @@
+- name: Install browsers
+  homebrew_cask:
+    name: '{{browsers_list}}'
+    state: present
