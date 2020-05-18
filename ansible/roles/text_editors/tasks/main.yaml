@@ -1,0 +1,8 @@
+- include_role:
+    name: sublime
+  when: install_sublime
+
+- include_role:
+    name: brackets
+  when: install_brackets
+

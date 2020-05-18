@@ -1,0 +1,4 @@
+- name: Install Sublime text editor
+  homebrew_cask:
+    name: sublime-text
+    state: present
