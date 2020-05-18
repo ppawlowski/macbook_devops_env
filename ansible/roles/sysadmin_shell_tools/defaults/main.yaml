@@ -1,4 +1,4 @@
 shell_tools_list:
   - wget
-  - 7z
+  - p7zip
   - mtr
